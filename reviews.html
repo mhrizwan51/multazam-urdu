@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تبصرے | الملتزم ٹریولز</title>
+<meta name="description" content="الملتزم ٹریولز، لاہور: حکومت سے منظور شدہ حج و عمرہ آپریٹر، 1981 سے۔">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">تبصرے</h1>
+<div class="fw">
+<h3>زائرین کیا کہتے ہیں</h3><div id="list"><p class="s">تبصرے لوڈ ہو رہے ہیں...</p></div><a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/AlMultazamTravels/reviews">فیس بک پر تمام تبصرے پڑھیں</a>
+<h3>اپنا تجربہ بتائیں</h3><p class="s">تبصرے ہماری جانچ کے بعد اس صفحے پر ظاہر ہوں گے۔ ہم صرف آپ کی اجازت سے شائع کرتے ہیں۔</p>
+<form id="f"><div class="row"><div><label>آپ کا نام *</label><input name="name" required></div><div><label>شہر</label><input name="city"></div></div><div class="row"><div><label>خدمت</label><select name="service"><option value="Umrah">عمرہ</option><option value="Hajj">حج</option><option value="Air ticket">ہوائی ٹکٹ</option><option value="Visa">ویزا</option><option value="Group tour">گروپ ٹور</option></select></div><div><label>درجہ</label><select name="rating"><option value="5">5 - بہترین</option><option value="4">4 - اچھا</option><option value="3">3 - درمیانہ</option><option value="2">2 - کمزور</option><option value="1">1 - بہت کمزور</option></select></div></div><label>آپ کا تبصرہ *</label><textarea name="text" rows="4" required maxlength="1500"></textarea><label><input type="checkbox" name="consent" value="1">میں اجازت دیتا / دیتی ہوں کہ الملتزم ٹریولز یہ تبصرہ میرے نام اور شہر کے ساتھ شائع کرے۔</label><input class="hp" name="website" tabindex="-1" autocomplete="off"><button id="b" type="submit">تبصرہ بھیجیں</button><div id="m"></div></form>
+</div>
+<script>
+(function(){var U="https://script.google.com/macros/s/AKfycbyJO5G5UHuQ0lpw-Jk_i_GxWhV1yKoJh1k0OIeuQAEHZPbttLUX0rDZ8wb8Y-MbZk0/exec";var list=document.getElementById("list");fetch(U+"?action=reviews").then(function(r){return r.json()}).then(function(j){list.textContent="";if(!j.ok||!j.reviews||!j.reviews.length){var p=document.createElement("p");p.className="s";p.textContent="یہاں ابھی کوئی تبصرہ شائع نہیں ہوا۔ ہمارے فیس بک صفحے پر زائرین کی رائے دیکھیں، یا نیچے اپنا تجربہ لکھیں۔";list.appendChild(p);return}j.reviews.forEach(function(v){var c=document.createElement("div");c.className="card";var s=document.createElement("div");s.className="st";var n=Math.max(0,Math.min(5,Number(v.rating)||0));s.textContent="★".repeat(n)+"☆".repeat(5-n);var t=document.createElement("div");t.textContent=v.text;var w=document.createElement("div");w.className="lbl";w.textContent=v.name+(v.city?"، "+v.city:"");c.appendChild(s);c.appendChild(t);c.appendChild(w);list.appendChild(c)})}).catch(function(){list.textContent="تبصرے ابھی لوڈ نہیں ہو سکے۔"});var f=document.getElementById("f"),m=document.getElementById("m"),b=document.getElementById("b");f.addEventListener("submit",function(e){e.preventDefault();var d={action:"review"};new FormData(f).forEach(function(v,k){d[k]=v});b.disabled=true;m.className="";m.textContent="بھیجا جا رہا ہے...";fetch(U,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(j){b.disabled=false;if(j.ok){m.className="ok";m.textContent="شکریہ۔ آپ کا تبصرہ موصول ہو گیا ہے اور جانچ کے بعد ظاہر ہو گا۔";f.reset()}else{m.className="er";m.textContent="کچھ گڑبڑ ہو گئی۔ براہِ کرم دوبارہ کوشش کریں۔"}}).catch(function(){b.disabled=false;m.className="er";m.textContent="بھیجا نہیں جا سکا۔ براہِ کرم دوبارہ کوشش کریں۔"})});})();
+</script>
+</main>
+<div id="ft"></div>
+<script src="site.js"></script>
+</body>
+</html>

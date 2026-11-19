@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>عمرہ پیکجز | الملتزم ٹریولز</title>
+<meta name="description" content="الملتزم ٹریولز، لاہور: حکومت سے منظور شدہ حج و عمرہ آپریٹر، 1981 سے۔">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">عمرہ پیکجز</h1>
+<div class="bn" data-m="dust" data-img="0" data-k="عمرہ <bdi dir=&quot;ltr&quot;>2026–27</bdi>" data-h="وہ سفر چنیں جو آپ کے خاندان کے مطابق ہو" data-p="لاہور سے گروپ روانگیاں، فیملی پیکجز اور حسبِ ضرورت سفر۔"></div>
+<div class="photos" data-ph="packages"></div>
+
+<div id="amt-b" class="wg">
+<style>
+#amt-b{color:#1b2f5e;max-width:980px;margin:0 auto 18px;line-height:1.9}
+#amt-b .n{font-family:Arial,Helvetica,sans-serif;direction:ltr;unicode-bidi:isolate}
+#amt-b .wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){#amt-b .wrap{grid-template-columns:1fr}}
+#amt-b .card{background:#fff;border:1px solid #e3e7ef;border-radius:14px;padding:16px 20px;box-shadow:0 4px 18px rgba(27,47,94,.08)}
+#amt-b h3{margin:0;font-size:21px}
+#amt-b .sub{color:#5b6577;font-size:14px;margin:0 0 6px}
+#amt-b label{display:block;font-size:14px;font-weight:bold;margin:6px 0 2px}
+#amt-b .seg{display:flex;gap:6px;flex-wrap:wrap}
+#amt-b .seg button{font-family:inherit;flex:1 1 auto;border:1px solid #c9d0dc;background:#fff;border-radius:8px;padding:2px 10px;font-size:14px;cursor:pointer;color:#1b2f5e}
+#amt-b .seg button.on{background:#1b2f5e;color:#fff;border-color:#1b2f5e}
+#amt-b input[type=number]{width:70px;padding:6px;border:1px solid #c9d0dc;border-radius:8px;font-size:14px;font-family:Arial}
+#amt-b .total{font-size:28px;font-weight:bold;color:#f26b1d;margin:2px 0 0}
+#amt-b .pp{font-size:14px;color:#5b6577;margin-bottom:6px}
+#amt-b .line{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:2px 0;border-bottom:1px dashed #e3e7ef}
+#amt-b .hotel{margin-top:8px;font-size:14px}
+#amt-b .bar{height:8px;background:#eef1f6;border-radius:4px;margin:2px 0 8px;overflow:hidden}
+#amt-b .bar i{display:block;height:100%;background:linear-gradient(270deg,#1b2f5e,#f26b1d);border-radius:4px;margin-right:0}
+#amt-b a.wa,#amt-b a.q{display:block;text-align:center;color:#fff;text-decoration:none;padding:4px;border-radius:8px;font-weight:bold;margin-top:8px}
+#amt-b a.wa{background:#25d366}#amt-b a.q{background:#1b2f5e}
+#amt-b .note{font-size:12px;color:#7a8498;margin-top:8px}
+</style>
+<div class="wrap">
+<div class="card">
+<h3>اپنا عمرہ پیکج خود ترتیب دیں</h3>
+<p class="sub">چار آسان انتخاب اور آپ کا تخمینہ تیار۔ حتمی قیمت چوبیس گھنٹوں میں تحریری طور پر۔</p>
+<label>مدت</label><div class="seg" data-k="days"><button data-v="7">7 دن</button><button data-v="10" class="on">10 دن</button><button data-v="14">14 دن</button><button data-v="21">21 دن</button></div>
+<label>ہوٹل کا معیار</label><div class="seg" data-k="tier"><button data-v="eco">اکانومی</button><button data-v="std" class="on">اسٹینڈرڈ (فور اسٹار)</button><button data-v="prm">پریمیم (فائیو اسٹار)</button></div>
+<label>ایک کمرے میں افراد</label><div class="seg" data-k="room"><button data-v="quad" class="on">چار</button><button data-v="triple">تین</button><button data-v="double">دو</button></div>
+<label>سفر کا موسم</label><div class="seg" data-k="season"><button data-v="normal" class="on">نومبر 2026 تا فروری 2027</button><button data-v="ramadan">رمضان 2027</button></div>
+<label>مسافر</label><div class="seg" style="align-items:center"><span style="font-size:14px">بالغ</span> <input type="number" id="ad" min="1" value="2"> <span style="font-size:14px">بچے (2 سے 11 سال)</span> <input type="number" id="ch" min="0" value="0"></div>
+</div>
+<div class="card">
+<h3>آپ کا تخمینہ</h3>
+<div class="total" id="tot"></div>
+<div class="pp" id="pp"></div>
+<div class="line"><span>فی بالغ</span><b id="pa"></b></div>
+<div class="line"><span>فی بچہ (25 فیصد کم، بستر کے بغیر)</span><b id="pc"></b></div>
+<div class="line"><span>شامل</span><span>ویزا، ٹکٹ، ہوٹل، ٹرانسپورٹ، زیارات، چوبیس گھنٹے رہنمائی</span></div>
+<div class="hotel" id="hot"></div>
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener">یہ تخمینہ واٹس ایپ پر بھیجیں</a>
+<a class="q" href="contact.html">تحریری کوٹیشن حاصل کریں</a>
+<p class="note">2026-27 کے اندازاً نرخ فی کس۔ رمضان کے نرخ منتخب عشرے پر منحصر ہیں۔ دو سال سے کم عمر بچوں کا کرایہ الگ بتایا جاتا ہے۔</p>
+</div>
+</div>
+<script>
+(function(){
+var base={eco:{7:285000,10:296000,14:330000,21:470000},std:{7:330000,10:360000,14:410000,21:490000},prm:{7:420000,10:475000,14:540000,21:680000}};
+var roomAdd={quad:0,triple:0.1,double:0.22};
+var RN={quad:'چار افراد فی کمرہ',triple:'تین افراد فی کمرہ',double:'دو افراد فی کمرہ'};
+var TN={eco:'اکانومی',std:'اسٹینڈرڈ فور اسٹار',prm:'پریمیم فائیو اسٹار'};
+var hotels={eco:{mk:'الکسوہ ٹاورز (یا اس جیسا)',mkd:900,md:'الایمان رائل (یا اس جیسا)',mdd:400},std:{mk:'مکہ ٹاورز / ایلاف اجیاد',mkd:350,md:'دار التقویٰ',mdd:150},prm:{mk:'سوئس اوٹیل / ہلٹن سویٹس (حرم ویو)',mkd:50,md:'انوار المدینہ موون پک',mdd:100}};
+var s={days:'10',tier:'std',room:'quad',season:'normal'};
+function f(n){return '<span class="n">'+Math.round(n).toLocaleString('en-PK')+'</span> روپے';}
+function ft(n){return Math.round(n).toLocaleString('en-PK')+' روپے';}
+function walk(m){return Math.max(1,Math.round(m/80))+' منٹ پیدل';}
+function calc(){
+ var ad=+document.getElementById('ad').value||1, ch=+document.getElementById('ch').value||0;
+ var pa=base[s.tier][s.days]*(1+roomAdd[s.room]); if(s.season==='ramadan') pa*=1.5;
+ var pc=pa*0.75, tot=pa*ad+pc*ch;
+ document.getElementById('tot').innerHTML=f(tot);
+ document.getElementById('pp').textContent=ad+' بالغ'+(ch?'، '+ch+' بچے':'')+'، '+s.days+' دن، '+TN[s.tier]+'، '+RN[s.room];
+ document.getElementById('pa').innerHTML=f(pa); document.getElementById('pc').innerHTML=f(pc);
+ var h=hotels[s.tier];
+ document.getElementById('hot').innerHTML='<b>مکہ:</b> '+h.mk+' · حرم سے '+h.mkd+' میٹر ('+walk(h.mkd)+')<div class="bar"><i style="width:'+Math.max(6,100-h.mkd/10)+'%"></i></div><b>مدینہ:</b> '+h.md+' · مسجدِ نبوی سے '+h.mdd+' میٹر ('+walk(h.mdd)+')<div class="bar"><i style="width:'+Math.max(6,100-h.mdd/10)+'%"></i></div>';
+ var msg='السلام علیکم، میں نے آپ کی ویب سائٹ پر عمرہ کا تخمینہ بنایا ہے: '+s.days+' دن، '+TN[s.tier]+'، '+RN[s.room]+'، '+(s.season==='ramadan'?'رمضان 2027':'نومبر 2026 تا فروری 2027')+'، '+ad+' بالغ'+(ch?' اور '+ch+' بچے':'')+'۔ تخمینہ '+ft(tot)+'۔ براہِ کرم تحریری کوٹیشن بھیج دیں۔';
+ document.getElementById('wa').href='https://wa.me/923001853111?text='+encodeURIComponent(msg);
+}
+document.querySelectorAll('#amt-b .seg[data-k] button').forEach(function(b){b.onclick=function(){var k=b.parentNode.dataset.k;b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');s[k]=b.dataset.v;calc();};});
+document.getElementById('ad').oninput=calc;document.getElementById('ch').oninput=calc;calc();
+})();
+</script>
+</div>
+
+<div id="amt-pk" class="wg">
+<style>
+#amt-pk{color:#1b2f5e;max-width:1000px;margin:0 auto 18px;line-height:1.9}
+#amt-pk .n{font-family:Arial,Helvetica,sans-serif;direction:ltr;unicode-bidi:isolate}
+#amt-pk .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+#amt-pk .filters button{font-family:inherit;border:1px solid #c9d0dc;background:#fff;border-radius:20px;padding:2px 16px;cursor:pointer;font-size:14px;color:#1b2f5e}
+#amt-pk .filters button.on{background:#1b2f5e;color:#fff;border-color:#1b2f5e}
+#amt-pk .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+#amt-pk .card{border:1px solid #e3e7ef;border-radius:14px;padding:14px 16px;background:#fff;box-shadow:0 3px 14px rgba(27,47,94,.07);position:relative}
+#amt-pk .tier{position:absolute;top:12px;left:14px;font-size:12px;font-weight:bold;padding:0 10px;border-radius:12px;background:#fff3e8;color:#f26b1d}
+#amt-pk .tier.p{background:#fff8dc;color:#8a6d00}#amt-pk .tier.e{background:#e8f6ec;color:#1e6b36}#amt-pk .tier.h{background:#eef1f6;color:#1b2f5e}
+#amt-pk h4{margin:0 0 2px;font-size:18px;padding-left:80px}
+#amt-pk .d{font-size:13px;color:#5b6577;margin-bottom:6px}
+#amt-pk .h{font-size:14px}
+#amt-pk .price{margin:6px 0 0;font-size:22px;font-weight:bold;color:#f26b1d}
+#amt-pk .price small{font-size:12px;color:#5b6577;font-weight:normal}
+#amt-pk .occ{font-size:13px;color:#5b6577;margin-bottom:6px}
+#amt-pk .inc{font-size:13px;color:#334;margin-bottom:10px}
+#amt-pk a.b{display:inline-block;background:#1b2f5e;color:#fff;text-decoration:none;padding:2px 14px;border-radius:8px;font-size:14px;font-weight:bold}
+#amt-pk a.w{background:#25d366;margin-right:6px}
+#amt-pk .note{font-size:13px;color:#7a8498;margin-top:12px}
+</style>
+<div class="filters"><button class="on" data-f="all">سب</button><button data-f="e">اکانومی</button><button data-f="s">اسٹینڈرڈ</button><button data-f="p">پریمیم</button><button data-f="h">حج</button></div>
+<div class="grid" id="amt-grid"></div>
+<p class="note">قیمتیں فی کس پاکستانی روپوں میں ہیں، 2026-27 کے سیزن کے لیے اندازاً ہیں، اور روانگی کی تاریخ اور کمرے میں افراد کی تعداد کے مطابق بدلتی ہیں۔ حتمی تحریری کوٹیشن چوبیس گھنٹوں میں واٹس ایپ پر۔</p>
+<script>
+(function(){
+var T={e:'اکانومی',s:'اسٹینڈرڈ',p:'پریمیم',h:'حج'};
+var P=[
+{n:'اکانومی عمرہ 7 دن',en:'Economy Umrah 7 Days',t:'e',d:7,mk:'الکسوہ ٹاورز (یا اس جیسا)، 900 میٹر',md:'الایمان رائل (یا اس جیسا)، 400 میٹر',q:285000,tr:315000,db:345000,inc:'ویزا، آنے جانے کا ٹکٹ، ہوٹل، ٹرانسپورٹ، زیارات، چوبیس گھنٹے رہنمائی',s:'نومبر 2026 تا فروری 2027'},
+{n:'اکانومی عمرہ 10 دن',en:'Economy Umrah 10 Days',t:'e',d:10,mk:'الکسوہ ٹاورز (یا اس جیسا)، 900 میٹر',md:'الایمان رائل (یا اس جیسا)، 400 میٹر',q:296000,tr:330000,db:365000,inc:'ویزا، آنے جانے کا ٹکٹ، ہوٹل، ٹرانسپورٹ، زیارات، چوبیس گھنٹے رہنمائی',s:'نومبر 2026 تا فروری 2027'},
+{n:'اسٹینڈرڈ عمرہ 10 دن',en:'Standard Umrah 10 Days',t:'s',d:10,mk:'مکہ ٹاورز / ایلاف اجیاد، 350 میٹر',md:'دار التقویٰ (یا اس جیسا)، 150 میٹر',q:360000,tr:395000,db:440000,inc:'ویزا، ٹکٹ، فور اسٹار ہوٹل، نجی ٹرانسپورٹ، زیارات، ناشتہ',s:'نومبر 2026 تا فروری 2027'},
+{n:'اسٹینڈرڈ عمرہ 14 دن',en:'Standard Umrah 14 Days',t:'s',d:14,mk:'مکہ ٹاورز / ایلاف اجیاد، 350 میٹر',md:'دار التقویٰ (یا اس جیسا)، 150 میٹر',q:410000,tr:450000,db:500000,inc:'ویزا، ٹکٹ، فور اسٹار ہوٹل، نجی ٹرانسپورٹ، زیارات، ناشتہ',s:'نومبر 2026 تا فروری 2027'},
+{n:'پریمیم عمرہ 10 دن',en:'Premium Umrah 10 Days',t:'p',d:10,mk:'سوئس اوٹیل / ہلٹن سویٹس، حرم ویو',md:'انوار المدینہ موون پک، 100 میٹر',q:475000,tr:520000,db:580000,inc:'ویزا، ٹکٹ، فائیو اسٹار ہوٹل، نجی ٹرانسپورٹ، زیارات، ناشتہ',s:'نومبر 2026 تا فروری 2027'},
+{n:'اسٹار عمرہ گروپ 21 دن',en:'Star Umrah Group 21 Days',t:'s',d:21,mk:'مکہ ٹاورز (یا اس جیسا)، 350 میٹر',md:'دار التقویٰ (یا اس جیسا)، 150 میٹر',q:470000,tr:510000,db:560000,inc:'ویزا، ٹکٹ، ہوٹل، گروپ ٹرانسپورٹ، زیارات، گروپ لیڈر',s:'اکتوبر 2026 کی گروپ روانگی'},
+{n:'رمضان عمرہ 15 دن',en:'Ramadan Umrah 15 Days',t:'s',d:15,mk:'مکہ ٹاورز (یا اس جیسا)، 350 میٹر',md:'دار التقویٰ (یا اس جیسا)، 150 میٹر',q:550000,tr:600000,db:660000,inc:'ویزا، ٹکٹ، ہوٹل، ٹرانسپورٹ، زیارات، افطار کا انتظام',s:'رمضان 2027، پہلی 20 راتیں'},
+{n:'حج 2027',en:'Hajj 2027',t:'h',d:30,mk:'عزیزیہ کی عمارت اور منیٰ کا خیمہ',md:'مسجدِ نبوی کے قریب',q:0,inc:'حج ویزا، فلائٹس، مکہ، مدینہ اور منیٰ میں قیام، کھانا، علماء کی رہنمائی، تربیت',s:'ذوالحجہ 1448ھ، قیمت حج پالیسی 2027 کے بعد'}];
+var g=document.getElementById('amt-grid');
+function f(n){return '<span class="n">'+n.toLocaleString('en-PK')+'</span> روپے';}
+function render(k){g.innerHTML=P.filter(function(p){return k==='all'||p.t===k;}).map(function(p){
+ var wa='https://wa.me/923001853111?text='+encodeURIComponent('السلام علیکم، مجھے '+p.n+' کی کوٹیشن چاہیے۔ ('+p.en+')');
+ return '<div class="card"><span class="tier '+p.t+'">'+T[p.t]+'</span><h4>'+p.n+'</h4><div class="d">'+p.d+' دن · '+p.s+'</div>'+
+ '<div class="h"><b>مکہ:</b> '+p.mk+'<br><b>مدینہ:</b> '+p.md+'</div>'+
+ (p.q?'<div class="price">'+f(p.q)+' <small>فی کس، چار افراد فی کمرہ</small></div><div class="occ">تین افراد: '+f(p.tr)+' · دو افراد: '+f(p.db)+'</div>':'<div class="price">رجسٹریشن جاری ہے</div><div class="occ">قیمت کا اعلان حج پالیسی 2027 کے ساتھ ہوگا</div>')+
+ '<div class="inc">شامل: '+p.inc+'</div><a class="b" href="contact.html">کوٹیشن حاصل کریں</a><a class="b w" href="'+wa+'" target="_blank" rel="noopener">واٹس ایپ</a></div>';}).join('');}
+render('all');
+document.querySelectorAll('#amt-pk .filters button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#amt-pk .filters button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');render(b.dataset.f);};});
+})();
+</script>
+</div>
+
+<section class="txt">
+<h2>ہر پیکج میں شامل</h2>
+<p>عمرہ ویزا، لاہور سے آنے جانے کا ٹکٹ (کراچی اور اسلام آباد سے بھی دستیاب)، ہوٹل میں قیام، ایئرپورٹ اور مکہ سے مدینہ کی ٹرانسپورٹ، زیارات، اور چوبیس گھنٹے سپورٹ لائن۔ قیمتیں فی کس پاکستانی روپوں میں ہیں اور کمرے میں افراد کی تعداد کے مطابق بدلتی ہیں۔ کھانا وہاں شامل ہے جہاں درج ہو۔</p>
+<h2>اکانومی، اسٹینڈرڈ اور پریمیم میں فرق</h2>
+<ul><li>اکانومی: حرم سے 600 سے 1,000 میٹر کے فاصلے پر ہوٹل، شٹل سروس، مشترکہ بس، گروپ لیڈر، بس کے ذریعے زیارات۔</li><li>اسٹینڈرڈ: 200 سے 550 میٹر کے اندر تھری یا فور اسٹار ہوٹل، نجی یا چھوٹے گروپ کی ٹرانسپورٹ، ناشتہ، گروپ لیڈر، زیارات۔</li><li>پریمیم: فائیو اسٹار حرم ویو ہوٹل، نجی گاڑی، ناشتہ، ذاتی کوآرڈینیٹر، ریاض الجنہ کی ترجیحی بکنگ۔</li></ul>
+<h2>بکنگ کے چار آسان مراحل</h2>
+<ul><li>پاسپورٹ کی کاپیاں واٹس ایپ یا انکوائری فارم کے ذریعے بھیجیں۔</li><li>چوبیس گھنٹوں میں تحریری کوٹیشن حاصل کریں۔</li><li>ایڈوانس ادا کر کے سیٹ اور ہوٹل کی تصدیق کریں۔</li><li>روانگی سے پہلے ویزا، ٹکٹ اور بریفنگ وصول کریں۔</li></ul>
+<h2>ادائیگی اور منسوخی</h2>
+<p>تصدیق کے لیے 30 فیصد ایڈوانس، بقایا روانگی سے 15 دن پہلے۔ ادائیگی بینک ٹرانسفر کے ذریعے یا لاہور آفس میں، اور ہر ادائیگی کی رسید دی جاتی ہے۔ منسوخی کے چارجز ایئرلائن اور ہوٹل کی پالیسی کے مطابق ہوں گے؛ ویزا جاری ہونے کے بعد ویزا فیس واپس نہیں ہوتی۔ تفصیل کے لیے <a href="terms.html">ادائیگی اور شرائط</a> دیکھیں۔</p>
+</section>
+</main>
+<div id="ft"></div>
+<script src="site.js"></script>
+</body>
+</html>

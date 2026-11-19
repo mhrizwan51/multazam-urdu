@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لاگ اِن | الملتزم ٹریولز</title>
+<meta name="description" content="الملتزم ٹریولز، لاہور: حکومت سے منظور شدہ حج و عمرہ آپریٹر، 1981 سے۔">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">لاگ اِن</h1>
+<div class="bn" data-m="stars" data-k="لاگ اِن" data-h="آپ کی بکنگز، ایک جگہ" data-p="اپنے اکاؤنٹ میں سائن اِن کریں۔"></div>
+<section class="txt">
+<h2>زائر اکاؤنٹ</h2>
+<p>اپنی تفصیلات محفوظ کرنے، جلد کوٹیشن حاصل کرنے، اور روانگی سے پہلے کی بریفنگ، سامان کی فہرست اور گروپ کا واٹس ایپ لنک پانے کے لیے مفت اکاؤنٹ بنائیں۔ پہلے سے رجسٹرڈ زائرین نیچے لاگ اِن کریں۔</p>
+<p>یہ زائر پورٹل کا پہلا ورژن ہے۔ بکنگ کی صورتحال، دستاویزات اپ لوڈ کرنے اور ادائیگیوں کی تفصیل کی سہولت اگلے مرحلے میں آ رہی ہے۔</p>
+</section>
+
+<div id="amt-auth" class="wg">
+<style>
+#amt-auth{max-width:460px;margin:0 auto 18px;color:#1b2f5e;line-height:1.9}
+#amt-auth .card{background:#fff;border:1px solid #e3e7ef;border-radius:14px;padding:16px 22px;box-shadow:0 4px 18px rgba(27,47,94,.08)}
+#amt-auth .tabs{display:flex;margin-bottom:10px;border-bottom:2px solid #e3e7ef}
+#amt-auth .tabs span{flex:1;text-align:center;padding:2px;cursor:pointer;font-weight:bold;color:#7a8498}
+#amt-auth .tabs span.on{color:#f26b1d;border-bottom:3px solid #f26b1d;margin-bottom:-2px}
+#amt-auth .f{display:flex;flex-direction:column;margin-bottom:6px}
+#amt-auth label{font-size:14px;font-weight:bold}
+#amt-auth input{padding:8px 10px;border:1px solid #c9d0dc;border-radius:8px;font-size:14px;font-family:Arial,Helvetica,sans-serif}
+#amt-auth input[name=name],#amt-auth input[name=city]{font-family:inherit;padding:4px 10px}
+#amt-auth input[type=email],#amt-auth input[type=password],#amt-auth input[name=phone]{direction:ltr;text-align:right}
+#amt-auth button{font-family:inherit;background:#1b2f5e;color:#fff;border:0;border-radius:8px;padding:4px;font-size:16px;font-weight:bold;cursor:pointer;width:100%}
+#amt-auth .msg{margin-top:8px;padding:6px 10px;border-radius:8px;font-size:14px;display:none}
+#amt-auth .ok{background:#e8f6ec;color:#1e6b36;display:block}
+#amt-auth .err{background:#fdecea;color:#a12b21;display:block}
+#amt-auth .panel{display:none}
+#amt-auth .panel.on{display:block}
+#amt-auth .welcome h3{margin:0 0 4px}
+#amt-auth .welcome a{display:block;padding:4px 10px;margin:6px 0;background:#f5f7fb;border-radius:8px;color:#1b2f5e;text-decoration:none;font-weight:bold}
+#amt-auth .note{font-size:12px;color:#7a8498;margin-top:8px}
+</style>
+<div class="card">
+<div class="tabs"><span class="on" data-t="login">لاگ اِن</span><span data-t="register">نیا اکاؤنٹ</span></div>
+<form class="panel on" id="amt-login">
+<div class="f"><label>ای میل</label><input name="email" type="email" required></div>
+<div class="f"><label>پاس ورڈ</label><input name="password" type="password" required></div>
+<button type="submit">لاگ اِن کریں</button>
+</form>
+<form class="panel" id="amt-register">
+<div class="f"><label>پورا نام *</label><input name="name" required></div>
+<div class="f"><label>ای میل *</label><input name="email" type="email" required></div>
+<div class="f"><label>فون / واٹس ایپ</label><input name="phone"></div>
+<div class="f"><label>شہر</label><input name="city"></div>
+<div class="f"><label>پاس ورڈ * (کم از کم 6 حروف)</label><input name="password" type="password" minlength="6" required></div>
+<button type="submit">اکاؤنٹ بنائیں</button>
+</form>
+<div class="panel welcome" id="amt-welcome">
+<h3>السلام علیکم، <span id="amt-name"></span></h3>
+<p style="margin:0">آپ کا زائر اکاؤنٹ فعال ہے۔ اہم روابط:</p>
+<a id="amt-wq" href="https://wa.me/923001853111" target="_blank" rel="noopener">واٹس ایپ پر میری کوٹیشن</a>
+<a href="umrah-guide.html">عمرہ کا طریقہ اور تیاری کی فہرست</a>
+<a href="umrah-packages.html">عمرہ پیکجز</a>
+<button type="button" id="amt-logout" style="background:#7a8498;margin-top:6px">لاگ آؤٹ</button>
+</div>
+<div class="msg" id="amt-amsg"></div>
+<p class="note">یہ ابتدائی اکاؤنٹ سسٹم ہے اور آپ کی معلومات ایک نجی گوگل شیٹ میں محفوظ ہوتی ہیں۔ اپنے بینک یا ای میل والا پاس ورڈ یہاں استعمال نہ کریں۔</p>
+</div>
+<script>
+(function(){
+var URL='https://script.google.com/macros/s/AKfycbyJO5G5UHuQ0lpw-Jk_i_GxWhV1yKoJh1k0OIeuQAEHZPbttLUX0rDZ8wb8Y-MbZk0/exec';
+var E={'Incorrect email or password':'ای میل یا پاس ورڈ درست نہیں','This email is already registered. Please log in.':'یہ ای میل پہلے سے رجسٹرڈ ہے۔ براہِ کرم لاگ اِن کریں۔','Name, email and password are required':'نام، ای میل اور پاس ورڈ ضروری ہیں'};
+document.getElementById('amt-wq').href='https://wa.me/923001853111?text='+encodeURIComponent('السلام علیکم، میں ویب سائٹ پر رجسٹرڈ ہوں اور اپنی کوٹیشن چاہتا ہوں');
+var root=document.getElementById('amt-auth'),msg=document.getElementById('amt-amsg');
+function err(r){msg.className='msg err';msg.textContent=(r&&E[r.error])||'کچھ مسئلہ ہو گیا، دوبارہ کوشش کریں۔';}
+function show(id){root.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='amt-'+id);});
+  root.querySelectorAll('.tabs span').forEach(function(s){s.classList.toggle('on',s.dataset.t===id);});
+  root.querySelector('.tabs').style.display=(id==='welcome')?'none':'flex';}
+root.querySelectorAll('.tabs span').forEach(function(s){s.onclick=function(){msg.className='msg';show(s.dataset.t);};});
+function post(form,action){
+  var d={action:action,source:'Urdu website login page'};new FormData(form).forEach(function(v,k){d[k]=v;});
+  var b=form.querySelector('button');b.disabled=true;msg.className='msg';
+  return fetch(URL,{method:'POST',body:JSON.stringify(d)}).then(function(r){return r.json();}).finally(function(){b.disabled=false;});
+}
+function welcome(r){document.getElementById('amt-name').textContent=r.name;try{sessionStorage.setItem('amtUser',JSON.stringify(r));}catch(e){}show('welcome');}
+document.getElementById('amt-login').onsubmit=function(e){e.preventDefault();post(this,'login').then(function(r){if(r.ok)welcome(r);else err(r);}).catch(function(){msg.className='msg err';msg.textContent='رابطے میں مسئلہ، دوبارہ کوشش کریں۔';});};
+document.getElementById('amt-register').onsubmit=function(e){e.preventDefault();post(this,'register').then(function(r){if(r.ok){welcome(r);msg.className='msg ok';msg.textContent='اکاؤنٹ بن گیا۔ خوش آمدید!';}else err(r);}).catch(function(){msg.className='msg err';msg.textContent='رابطے میں مسئلہ، دوبارہ کوشش کریں۔';});};
+document.getElementById('amt-logout').onclick=function(){try{sessionStorage.removeItem('amtUser');}catch(e){}msg.className='msg';show('login');};
+try{var u=sessionStorage.getItem('amtUser');if(u)welcome(JSON.parse(u));}catch(e){}
+})();
+</script>
+</div>
+</main>
+<div id="ft"></div>
+<script src="site.js"></script>
+</body>
+</html>

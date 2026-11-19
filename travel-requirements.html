@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سفری تقاضے | الملتزم ٹریولز</title>
+<meta name="description" content="الملتزم ٹریولز، لاہور: حکومت سے منظور شدہ حج و عمرہ آپریٹر، 1981 سے۔">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">سفری تقاضے</h1>
+<div class="bn" data-m="sweep" data-img="3" data-k="سفر سے پہلے" data-h="کاغذات پہلے سے تیار رکھیں" data-p="پاسپورٹ، ویزا، ویکسین اور سامان کی فہرست۔"></div>
+
+<div id="amt-t" class="wg">
+<style>
+#amt-t{color:#1b2f5e;max-width:980px;margin:0 auto 18px;line-height:1.9}
+#amt-t .n{font-family:Arial,Helvetica,sans-serif;direction:ltr;unicode-bidi:isolate}
+#amt-t .g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:760px){#amt-t .g{grid-template-columns:1fr}}
+#amt-t .c{background:#fff;border:1px solid #e3e7ef;border-radius:14px;padding:12px 16px;box-shadow:0 4px 18px rgba(27,47,94,.08)}
+#amt-t h4{margin:0;font-size:17px}
+#amt-t .s{font-size:13px;color:#5b6577;margin:0 0 6px}
+#amt-t table{width:100%;font-size:14px;border-collapse:collapse}
+#amt-t td{padding:0 0 2px;border-bottom:1px dashed #eef1f6}
+#amt-t td:last-child{text-align:left;font-weight:bold;font-family:Arial,Helvetica,sans-serif}
+#amt-t .tabs{display:flex;gap:6px;margin-bottom:6px}
+#amt-t .tabs button{font-family:inherit;flex:1;border:1px solid #c9d0dc;background:#fff;border-radius:8px;padding:0 6px;cursor:pointer;font-size:14px;color:#1b2f5e}
+#amt-t .tabs button.on{background:#1b2f5e;color:#fff}
+#amt-t input{width:100%;box-sizing:border-box;padding:8px;border:1px solid #c9d0dc;border-radius:8px;font-size:15px;margin:2px 0;font-family:Arial;direction:ltr;text-align:right}
+#amt-t input::placeholder{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif}
+#amt-t .big{font-size:22px;font-weight:bold;color:#f26b1d;margin:2px 0}
+#amt-t .q{font-size:14px}
+#amt-t .btn{font-family:inherit;margin-top:6px;border:0;background:#1b2f5e;color:#fff;border-radius:8px;padding:2px 12px;cursor:pointer;font-size:14px}
+</style>
+<div class="g">
+<div class="c"><h4>آج کے نماز کے اوقات</h4><p class="s" id="pdate">لوڈ ہو رہا ہے…</p>
+<div class="tabs"><button class="on" data-c="mk">مکہ</button><button data-c="md">مدینہ</button><button data-c="lh">لاہور</button></div>
+<table id="pt"></table></div>
+<div class="c"><h4>روپے ⇄ ریال کنورٹر</h4><p class="s" id="rate">آج کا ریٹ معلوم کیا جا رہا ہے…</p>
+<input type="number" id="pkr" value="100000"><div style="font-size:13px;color:#5b6577">پاکستانی روپے</div>
+<div class="big" id="sar">—</div><div style="font-size:13px;color:#5b6577">سعودی ریال</div>
+<input type="number" id="sar2" placeholder="یا ریال درج کریں" style="margin-top:8px"><div class="big" id="pkr2" style="font-size:18px">—</div></div>
+<div class="c"><h4>قبلہ اور ہجری تاریخ</h4><p class="s">آپ کی اجازت سے، آپ کے موجودہ مقام کے مطابق۔</p>
+<div class="q">ہجری تاریخ: <b id="hij">…</b><br>قبلہ کی سمت: <b id="qb">نیچے بٹن دبائیں</b></div>
+<button class="btn" onclick="amtQibla()">میری قبلہ کی سمت معلوم کریں</button>
+<p class="s" style="margin-top:6px">ریاض الجنہ اور عمرہ کے اجازت نامے نسک ایپ سے جاری ہوتے ہیں؛ ہماری ٹیم ہر گروپ کے لیے یہ بکنگ کرتی ہے۔</p></div>
+</div>
+<script>
+(function(){
+var C={mk:['مکہ مکرمہ',21.4225,39.8262],md:['مدینہ منورہ',24.4672,39.6111],lh:['لاہور',31.5204,74.3587]};
+var N={Fajr:'فجر',Sunrise:'طلوعِ آفتاب',Dhuhr:'ظہر',Asr:'عصر',Maghrib:'مغرب',Isha:'عشاء'};
+var M=['جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر','اکتوبر','نومبر','دسمبر'];
+function load(k){var c=C[k];fetch('https://api.aladhan.com/v1/timings?latitude='+c[1]+'&longitude='+c[2]+'&method=4').then(function(r){return r.json();}).then(function(j){var t=j.data.timings;document.getElementById('pt').innerHTML=Object.keys(N).map(function(x){return '<tr><td>'+N[x]+'</td><td>'+t[x]+'</td></tr>';}).join('');var g=j.data.date.gregorian,h=j.data.date.hijri;var hs=h.day+' '+h.month.ar+' '+h.year+'ھ';document.getElementById('pdate').textContent=c[0]+' · '+(+g.day)+' '+M[g.month.number-1]+' '+g.year+' · '+hs;document.getElementById('hij').textContent=hs;}).catch(function(){document.getElementById('pdate').textContent='اس وقت نماز کے اوقات دستیاب نہیں۔';});}
+document.querySelectorAll('#amt-t .tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#amt-t .tabs button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');load(b.dataset.c);};});
+load('mk');
+var rate=0.0132;
+function fm(n){return '<span class="n">'+n.toLocaleString('en-PK',{maximumFractionDigits:0})+'</span>';}
+fetch('https://open.er-api.com/v6/latest/PKR').then(function(r){return r.json();}).then(function(j){if(j&&j.rates&&j.rates.SAR){rate=j.rates.SAR;var d=new Date(j.time_last_update_utc);document.getElementById('rate').innerHTML='1 ریال = '+fm(+(1/rate).toFixed(2))+' روپے (مارکیٹ ریٹ، '+d.getDate()+' '+M[d.getMonth()]+')';}conv();}).catch(function(){document.getElementById('rate').innerHTML='اندازاً ریٹ: 1 ریال ≈ '+fm(Math.round(1/rate))+' روپے';conv();});
+function conv(){var p=+document.getElementById('pkr').value||0;document.getElementById('sar').innerHTML=fm(p*rate)+' ریال';var s=+document.getElementById('sar2').value||0;document.getElementById('pkr2').innerHTML=s?fm(s/rate)+' روپے':'—';}
+document.getElementById('pkr').oninput=conv;document.getElementById('sar2').oninput=conv;
+window.amtQibla=function(){var out=document.getElementById('qb');if(!navigator.geolocation){out.textContent='یہ سہولت دستیاب نہیں';return;}out.textContent='مقام معلوم کیا جا رہا ہے…';navigator.geolocation.getCurrentPosition(function(p){fetch('https://api.aladhan.com/v1/qibla/'+p.coords.latitude+'/'+p.coords.longitude).then(function(r){return r.json();}).then(function(j){out.innerHTML='شمال سے '+fm(Math.round(j.data.direction))+' درجے (گھڑی کی سمت میں)';}).catch(function(){out.textContent='دستیاب نہیں';});},function(){out.textContent='مقام کی اجازت درکار ہے';});};
+})();
+</script>
+</div>
+
+<section class="txt">
+<p>پاکستانی عازمین کو عمرہ یا حج کے لیے سعودی عرب جانے سے پہلے کن چیزوں کی ضرورت ہے۔ قواعد بدلتے رہتے ہیں؛ بکنگ کے وقت ہم تازہ ترین تقاضوں کی تصدیق کرتے ہیں۔</p>
+<h2>پاکستانی شہریوں کے لیے عمرہ ویزا</h2>
+<ul><li>الملتزم جیسے وزارت سے منظور شدہ آپریٹر کے ذریعے جاری ہوتا ہے؛ عازمین نسک پر براہِ راست درخواست نہیں دے سکتے۔</li><li>کم از کم چھ ماہ کی میعاد والا پاسپورٹ؛ صاف اسکین شدہ کاپی اور سفید پس منظر والی تصویر۔</li><li>ویزا فیس تقریباً 300 سعودی ریال اور لازمی انشورنس؛ عموماً 30 دن کے اندر داخلے اور 90 دن تک قیام کے لیے کارآمد۔</li><li>دستاویزات مکمل ہونے کے بعد 3 سے 5 کاروباری دن۔</li></ul>
+<h2>صحت کے تقاضے</h2>
+<ul><li>سفر سے کم از کم 10 دن پہلے گردن توڑ بخار (ACYW) کی ویکسین؛ ویکسین کی قسم کے مطابق سرٹیفکیٹ 3 سے 5 سال کارآمد۔</li><li>پاکستان سے جانے والے تمام مسافروں کے لیے پولیو ویکسینیشن سرٹیفکیٹ (bOPV یا IPV)۔</li><li>ویکسینیشن کا ڈیجیٹل ریکارڈ ساتھ رکھیں؛ ایئرپورٹ عملہ چیک اِن پر طلب کر سکتا ہے۔</li><li>اپنی روزمرہ کی دوائیں نسخے کے ساتھ لے جائیں؛ مکہ اور مدینہ کی فارمیسیوں میں عام دوائیں دستیاب ہیں۔</li></ul>
+<h2>نسک ایپ اور اجازت نامے</h2>
+<ul><li>ریاض الجنہ کی زیارت اور عمرہ کے اجازت نامے نسک ایپ کے ذریعے جاری ہوتے ہیں؛ ہماری ٹیم گروپ کے ہر زائر کے لیے ریاض الجنہ کا وقت بک کرتی ہے۔</li><li>حج کے عازمین کو نسک کارڈ ملتا ہے؛ حج کے دنوں میں اسے ہر وقت ساتھ رکھیں۔</li></ul>
+<h2>رقم</h2>
+<ul><li>کرنسی: سعودی ریال۔ پاکستان میں یا ہوٹل پر تبدیل کریں؛ اکثر دکانوں اور ریستورانوں میں کارڈ چلتے ہیں۔</li><li>ٹیکسی، حجام اور حرم کے قریب خریداری کے لیے چھوٹے نوٹ رکھیں۔</li></ul>
+<h2>موبائل اور انٹرنیٹ</h2>
+<ul><li>سعودی سم (STC، موبائلی، زین) جدہ اور مدینہ ایئرپورٹ پر ملتی ہے؛ ای سم روانگی سے پہلے خریدی جا سکتی ہے۔</li><li>ہر گروپ کا گروپ لیڈر کے ساتھ واٹس ایپ گروپ ہوتا ہے جس میں روزانہ اعلانات کیے جاتے ہیں۔</li></ul>
+<h2>موسم اور لباس</h2>
+<ul><li>مکہ میں سال کا بیشتر حصہ گرمی رہتی ہے؛ مدینہ میں سردیوں کی راتیں ٹھنڈی ہوتی ہیں۔ رمضان 2027 فروری اور مارچ میں آئے گا۔</li><li>ہلکے سوتی کپڑے، آرام دہ چپل، چھتری یا ٹوپی، اور مدینہ کے لیے ایک گرم کپڑا۔</li></ul>
+<h2>آداب</h2>
+<ul><li>نماز کے اوقات کا احترام کریں، حرم کے دروازوں پر صبر سے قطار میں رہیں اور حرم کو صاف رکھیں۔</li><li>مساجد کے اندر تصویر صرف اس طرح لیں کہ نمازیوں کو خلل نہ ہو؛ ڈرون کی اجازت نہیں۔</li></ul>
+</section>
+</main>
+<div id="ft"></div>
+<script src="site.js"></script>
+</body>
+</html>

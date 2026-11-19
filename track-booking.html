@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>میری بکنگ | الملتزم ٹریولز</title>
+<meta name="description" content="الملتزم ٹریولز، لاہور: حکومت سے منظور شدہ حج و عمرہ آپریٹر، 1981 سے۔">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">میری بکنگ</h1>
+<div class="fw">
+<h3>میری بکنگ دیکھیں</h3><p class="s">اپنی رسید پر درج بکنگ آئی ڈی (مثلاً BKG-0001) اور بکنگ کے وقت دیا گیا فون نمبر لکھیں۔</p>
+<form id="f"><div class="row"><div><label>بکنگ آئی ڈی</label><input name="bookingId" required placeholder="BKG-0001" dir="ltr" style="text-align:right"></div><div><label>فون / واٹس ایپ</label><input name="phone" required inputmode="tel" placeholder="0300 1234567" dir="ltr" style="text-align:right"></div></div><input class="hp" name="website" tabindex="-1" autocomplete="off"><button id="b" type="submit">حیثیت دیکھیں</button></form><div id="m"></div><div id="r"></div>
+</div>
+<script>
+(function(){var U="https://script.google.com/macros/s/AKfycbyJO5G5UHuQ0lpw-Jk_i_GxWhV1yKoJh1k0OIeuQAEHZPbttLUX0rDZ8wb8Y-MbZk0/exec";var f=document.getElementById("f"),m=document.getElementById("m"),r=document.getElementById("r"),b=document.getElementById("b");function money(x){var n=Number(x);return isNaN(n)?String(x):n.toLocaleString("en-US")+" روپے"}f.addEventListener("submit",function(e){e.preventDefault();r.textContent="";m.className="";m.textContent="دیکھا جا رہا ہے...";b.disabled=true;var d={action:"lookup"};new FormData(f).forEach(function(v,k){d[k]=v});fetch(U,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(j){b.disabled=false;if(!j.ok){m.className="er";m.textContent="اس آئی ڈی اور فون نمبر سے کوئی بکنگ نہیں ملی۔ براہِ کرم دوبارہ جانچیں یا واٹس ایپ کریں: 0300 1853111";return}m.textContent="";var k=j.booking,rows=[["بکنگ آئی ڈی",k.id],["مرکزی مسافر",k.passenger],["پیکج",k.package],["مسافروں کی تعداد",k.travellers],["روانگی",k.departure],["واپسی",k.returnDate],["ویزا کی حیثیت",k.visa],["بکنگ کی حیثیت",k.status],["کل رقم",money(k.total)],["اب تک ادا شدہ",money(k.advance)],["باقی رقم",money(k.balance)]];var t=document.createElement("table");rows.forEach(function(a){var tr=document.createElement("tr"),c1=document.createElement("td"),c2=document.createElement("td");c1.textContent=a[0];c2.textContent=a[1]==null?"":a[1];tr.appendChild(c1);tr.appendChild(c2);t.appendChild(tr)});r.appendChild(t)}).catch(function(){b.disabled=false;m.className="er";m.textContent="ابھی جانچ نہیں ہو سکی۔ براہِ کرم واٹس ایپ کریں: 0300 1853111"})});})();
+</script>
+</main>
+<div id="ft"></div>
+<script src="site.js"></script>
+</body>
+</html>
