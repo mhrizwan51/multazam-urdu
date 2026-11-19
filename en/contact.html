@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Al Multazam Travels</title>
+<meta name="description" content="Al Multazam Travels, Lahore: government-approved Hajj and Umrah operator since 1981.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">Contact</h1>
+<div class="bn" data-m="dust" data-img="2" data-k="Contact" data-h="We are one message away" data-p="Call, WhatsApp or visit our office in Lahore."></div>
+<section class="txt">
+<h2>Talk to us</h2>
+<ul><li>WhatsApp and phone: 0333 4357868 (Naseer Naeem), 0300 9408112 (Sami Naeem), 0300 1853111 (Mawiz Naeem)</li><li>Email: <a href="mailto:almultazamtravels@gmail.com">almultazamtravels@gmail.com</a></li><li>Office: 3-L Commercial, DHA Phase 8, Lahore 54000, Pakistan. Monday to Saturday, 10:00 to 19:00.</li><li>Facebook: <a href="https://www.facebook.com/AlMultazamTravels">facebook.com/AlMultazamTravels</a> | Instagram: almultazamtravels</li></ul>
+<p>Fill in the form below for a written quote within 24 hours, or WhatsApp us a passport copy to pre-reserve a seat on the next Saudia promo fare.</p>
+</section>
+
+<div id="amt-inq" class="wg">
+<style>
+#amt-inq{font-family:Arial,Helvetica,sans-serif;max-width:720px;margin:0 auto 18px;color:#1b2f5e}
+#amt-inq .card{background:#fff;border:1px solid #e3e7ef;border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(27,47,94,.08)}
+#amt-inq h3{margin:0 0 4px;font-size:22px;color:#1b2f5e}
+#amt-inq p.sub{margin:0 0 16px;color:#5b6577;font-size:14px}
+#amt-inq .row{display:flex;gap:12px;flex-wrap:wrap}
+#amt-inq .f{flex:1 1 200px;display:flex;flex-direction:column;margin-bottom:12px}
+#amt-inq label{font-size:13px;font-weight:bold;margin-bottom:4px}
+#amt-inq input,#amt-inq select,#amt-inq textarea{padding:10px;border:1px solid #c9d0dc;border-radius:8px;font-size:14px;font-family:inherit}
+#amt-inq textarea{min-height:80px}
+#amt-inq button{background:#f26b1d;color:#fff;border:0;border-radius:8px;padding:12px 22px;font-size:15px;font-weight:bold;cursor:pointer;width:100%}
+#amt-inq button:disabled{opacity:.6}
+#amt-inq .wa{display:block;text-align:center;margin-top:10px;color:#1b2f5e;font-size:13px}
+#amt-inq .msg{margin-top:12px;padding:10px;border-radius:8px;font-size:14px;display:none}
+#amt-inq .ok{background:#e8f6ec;color:#1e6b36;display:block}
+#amt-inq .err{background:#fdecea;color:#a12b21;display:block}
+</style>
+<div class="card">
+<h3>Get a free Umrah / Hajj quote</h3>
+<p class="sub">Written quote within 24 hours. Fields marked * are required.</p>
+<form id="amt-form">
+<div class="row">
+<div class="f"><label>Full name *</label><input name="name" required></div>
+<div class="f"><label>Phone / WhatsApp *</label><input name="phone" required placeholder="0300 1234567"></div>
+</div>
+<div class="row">
+<div class="f"><label>Email</label><input name="email" type="email"></div>
+<div class="f"><label>City</label><input name="city" placeholder="Lahore"></div>
+</div>
+<div class="row">
+<div class="f"><label>Service *</label><select name="service"><option>Umrah</option><option>Hajj</option><option>Ticketing</option><option>Visa</option><option>Group tour</option></select></div>
+<div class="f"><label>Package</label><select name="package"><option value="">Not sure yet</option><option>Economy Umrah 7 Days</option><option>Economy Umrah 10 Days</option><option>Standard Umrah 10 Days</option><option>Standard Umrah 14 Days</option><option>Premium Umrah 10 Days</option><option>Star Umrah Group 21 Days</option><option>Ramadan Umrah 15 Days</option><option>Hajj 2027</option><option>Custom package</option></select></div>
+</div>
+<div class="row">
+<div class="f"><label>Adults</label><input name="adults" type="number" min="1" value="1"></div>
+<div class="f"><label>Children</label><input name="children" type="number" min="0" value="0"></div>
+<div class="f"><label>Room type</label><select name="room"><option>Quad</option><option>Triple</option><option>Double</option><option>Single</option></select></div>
+</div>
+<div class="row">
+<div class="f"><label>Preferred travel month</label><input name="month" placeholder="e.g. December 2026"></div>
+<div class="f"><label>Budget per person (PKR)</label><input name="budget" type="number" placeholder="350000"></div>
+</div>
+<div class="f"><label>Message</label><textarea name="message" placeholder="Dates, hotel preference, special needs (wheelchair, infant, dietary)"></textarea></div>
+<button type="submit">Send inquiry</button>
+<a class="wa" href="https://wa.me/923001853111?text=Assalam%20o%20Alaikum%2C%20I%20want%20an%20Umrah%20quote" target="_blank" rel="noopener">Or WhatsApp us directly: 0300 1853111</a>
+<div class="msg" id="amt-msg"></div>
+</form>
+</div>
+<script>
+(function(){
+var URL='https://script.google.com/macros/s/AKfycbyJO5G5UHuQ0lpw-Jk_i_GxWhV1yKoJh1k0OIeuQAEHZPbttLUX0rDZ8wb8Y-MbZk0/exec';
+var f=document.getElementById('amt-form'),m=document.getElementById('amt-msg'),b=f.querySelector('button');
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var d={action:'inquiry',source:'Website inquiry form'};
+  new FormData(f).forEach(function(v,k){d[k]=v;});
+  b.disabled=true;b.textContent='Sending...';m.className='msg';
+  fetch(URL,{method:'POST',body:JSON.stringify(d)}).then(function(r){return r.json();}).then(function(r){
+    if(r.ok){m.className='msg ok';m.textContent='JazakAllah khair, your inquiry '+r.id+' is received. We will contact you within 24 hours.';f.reset();}
+    else{m.className='msg err';m.textContent=r.error||'Something went wrong. Please WhatsApp us.';}
+  }).catch(function(){m.className='msg err';m.textContent='Could not send. Please WhatsApp 0300 1853111.';})
+  .finally(function(){b.disabled=false;b.textContent='Send inquiry';});
+});
+})();
+</script>
+</div>
+</main>
+<div id="ft"></div>
+<script src="../site.js"></script>
+</body>
+</html>

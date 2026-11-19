@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reviews | Al Multazam Travels</title>
+<meta name="description" content="Al Multazam Travels, Lahore: government-approved Hajj and Umrah operator since 1981.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">Reviews</h1>
+<div class="fw">
+<h3>What pilgrims say</h3><div id="list"><p class="s">Loading reviews...</p></div><a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/AlMultazamTravels/reviews">Read all reviews on Facebook</a>
+<h3>Share your experience</h3><p class="s">Reviews appear on this page after we check them. We only publish with your permission.</p>
+<form id="f"><div class="row"><div><label>Your name *</label><input name="name" required></div><div><label>City</label><input name="city"></div></div><div class="row"><div><label>Service</label><select name="service"><option>Umrah</option><option>Hajj</option><option>Air ticket</option><option>Visa</option><option>Group tour</option></select></div><div><label>Rating</label><select name="rating"><option value="5">5 - Excellent</option><option value="4">4 - Good</option><option value="3">3 - Average</option><option value="2">2 - Poor</option><option value="1">1 - Very poor</option></select></div></div><label>Your review *</label><textarea name="text" rows="4" required maxlength="1500"></textarea><label><input type="checkbox" name="consent" value="1">I allow Al Multazam Travels to publish this review with my name and city.</label><input class="hp" name="website" tabindex="-1" autocomplete="off"><button id="b" type="submit">Submit review</button><div id="m"></div></form>
+</div>
+<script>
+(function(){var U="https://script.google.com/macros/s/AKfycbyJO5G5UHuQ0lpw-Jk_i_GxWhV1yKoJh1k0OIeuQAEHZPbttLUX0rDZ8wb8Y-MbZk0/exec";var list=document.getElementById("list");fetch(U+"?action=reviews").then(function(r){return r.json()}).then(function(j){list.textContent="";if(!j.ok||!j.reviews||!j.reviews.length){var p=document.createElement("p");p.className="s";p.textContent="No reviews are published here yet. See what pilgrims say on our Facebook page, or share your own below.";list.appendChild(p);return}j.reviews.forEach(function(v){var c=document.createElement("div");c.className="card";var s=document.createElement("div");s.className="st";var n=Math.max(0,Math.min(5,Number(v.rating)||0));s.textContent="★".repeat(n)+"☆".repeat(5-n);var t=document.createElement("div");t.textContent=v.text;var w=document.createElement("div");w.className="lbl";w.textContent=v.name+(v.city?", "+v.city:"")+(v.service?" - "+v.service:"");c.appendChild(s);c.appendChild(t);c.appendChild(w);list.appendChild(c)})}).catch(function(){list.textContent="Reviews could not be loaded right now."});var f=document.getElementById("f"),m=document.getElementById("m"),b=document.getElementById("b");f.addEventListener("submit",function(e){e.preventDefault();var d={action:"review"};new FormData(f).forEach(function(v,k){d[k]=v});b.disabled=true;m.className="";m.textContent="Sending...";fetch(U,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(j){b.disabled=false;if(j.ok){m.className="ok";m.textContent="Thank you. Your review has been received and will appear after we check it.";f.reset()}else{m.className="er";m.textContent=j.error||"Something went wrong."}}).catch(function(){b.disabled=false;m.className="er";m.textContent="Could not send. Please try again."})});})();
+</script>
+</main>
+<div id="ft"></div>
+<script src="../site.js"></script>
+</body>
+</html>

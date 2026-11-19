@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Track Booking | Al Multazam Travels</title>
+<meta name="description" content="Al Multazam Travels, Lahore: government-approved Hajj and Umrah operator since 1981.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">Track Booking</h1>
+<div class="fw">
+<h3>Find my booking</h3><p class="s">Enter the booking ID from your receipt (for example BKG-0001) and the phone number you booked with.</p>
+<form id="f"><div class="row"><div><label>Booking ID</label><input name="bookingId" required placeholder="BKG-0001"></div><div><label>Phone / WhatsApp</label><input name="phone" required inputmode="tel" placeholder="0300 1234567"></div></div><input class="hp" name="website" tabindex="-1" autocomplete="off"><button id="b" type="submit">Check status</button></form><div id="m"></div><div id="r"></div>
+</div>
+<script>
+(function(){var U="https://script.google.com/macros/s/AKfycbyJO5G5UHuQ0lpw-Jk_i_GxWhV1yKoJh1k0OIeuQAEHZPbttLUX0rDZ8wb8Y-MbZk0/exec";var f=document.getElementById("f"),m=document.getElementById("m"),r=document.getElementById("r"),b=document.getElementById("b");function money(x){var n=Number(x);return isNaN(n)?String(x):"PKR "+n.toLocaleString("en-US")}f.addEventListener("submit",function(e){e.preventDefault();r.textContent="";m.className="";m.textContent="Checking...";b.disabled=true;var d={action:"lookup"};new FormData(f).forEach(function(v,k){d[k]=v});fetch(U,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)}).then(function(x){return x.json()}).then(function(j){b.disabled=false;if(!j.ok){m.className="er";m.textContent=j.error||"Not found.";return}m.textContent="";var k=j.booking,rows=[["Booking ID",k.id],["Lead passenger",k.passenger],["Package",k.package],["Travellers",k.travellers],["Departure",k.departure],["Return",k.returnDate],["Visa status",k.visa],["Booking status",k.status],["Total",money(k.total)],["Paid so far",money(k.advance)],["Balance due",money(k.balance)]];var t=document.createElement("table");rows.forEach(function(a){var tr=document.createElement("tr"),c1=document.createElement("td"),c2=document.createElement("td");c1.textContent=a[0];c2.textContent=a[1]==null?"":a[1];tr.appendChild(c1);tr.appendChild(c2);t.appendChild(tr)});r.appendChild(t)}).catch(function(){b.disabled=false;m.className="er";m.textContent="Could not check right now. Please WhatsApp 0300 1853111."})});})();
+</script>
+</main>
+<div id="ft"></div>
+<script src="../site.js"></script>
+</body>
+</html>

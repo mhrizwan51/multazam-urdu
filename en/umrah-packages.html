@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Umrah Packages | Al Multazam Travels</title>
+<meta name="description" content="Al Multazam Travels, Lahore: government-approved Hajj and Umrah operator since 1981.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">Umrah Packages</h1>
+<div class="bn" data-m="dust" data-img="0" data-k="Umrah 2026–27" data-h="Choose the journey that suits your family" data-p="Group departures, family packages and fully custom trips from Lahore."></div>
+<div class="photos" data-ph="packages"></div>
+
+<div id="amt-b" class="wg">
+<style>
+#amt-b{font-family:Arial,Helvetica,sans-serif;color:#1b2f5e;max-width:980px;margin:0 auto 18px}
+#amt-b .wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){#amt-b .wrap{grid-template-columns:1fr}}
+#amt-b .card{background:#fff;border:1px solid #e3e7ef;border-radius:14px;padding:20px;box-shadow:0 4px 18px rgba(27,47,94,.08)}
+#amt-b h3{margin:0 0 4px;font-size:20px}
+#amt-b .sub{color:#5b6577;font-size:13px;margin:0 0 14px}
+#amt-b label{display:block;font-size:13px;font-weight:bold;margin:10px 0 6px}
+#amt-b .seg{display:flex;gap:6px;flex-wrap:wrap}
+#amt-b .seg button{flex:1 1 auto;border:1px solid #c9d0dc;background:#fff;border-radius:8px;padding:9px 10px;font-size:13px;cursor:pointer;color:#1b2f5e}
+#amt-b .seg button.on{background:#1b2f5e;color:#fff;border-color:#1b2f5e}
+#amt-b input[type=number]{width:90px;padding:8px;border:1px solid #c9d0dc;border-radius:8px;font-size:14px}
+#amt-b .total{font-size:30px;font-weight:bold;color:#f26b1d;margin:6px 0 2px}
+#amt-b .pp{font-size:13px;color:#5b6577;margin-bottom:12px}
+#amt-b .line{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:6px 0;border-bottom:1px dashed #e3e7ef}
+#amt-b .hotel{margin-top:14px;font-size:13px}
+#amt-b .bar{height:8px;background:#eef1f6;border-radius:4px;margin:4px 0 10px;overflow:hidden}
+#amt-b .bar i{display:block;height:100%;background:linear-gradient(90deg,#1b2f5e,#f26b1d);border-radius:4px}
+#amt-b a.wa{display:block;text-align:center;background:#25d366;color:#fff;text-decoration:none;padding:12px;border-radius:8px;font-weight:bold;margin-top:12px}
+#amt-b a.q{display:block;text-align:center;background:#1b2f5e;color:#fff;text-decoration:none;padding:12px;border-radius:8px;font-weight:bold;margin-top:8px}
+#amt-b .note{font-size:11px;color:#7a8498;margin-top:10px}
+</style>
+<div class="wrap">
+<div class="card">
+<h3>Build your own Umrah package</h3>
+<p class="sub">Four quick choices and you have an estimate. Final price confirmed in writing within 24 hours.</p>
+<label>Duration</label><div class="seg" data-k="days"><button data-v="7">7 days</button><button data-v="10" class="on">10 days</button><button data-v="14">14 days</button><button data-v="21">21 days</button></div>
+<label>Hotel tier</label><div class="seg" data-k="tier"><button data-v="eco">Economy</button><button data-v="std" class="on">Standard 4★</button><button data-v="prm">Premium 5★</button></div>
+<label>Room sharing</label><div class="seg" data-k="room"><button data-v="quad" class="on">Quad</button><button data-v="triple">Triple</button><button data-v="double">Double</button></div>
+<label>Travel season</label><div class="seg" data-k="season"><button data-v="normal" class="on">Nov 2026 to Feb 2027</button><button data-v="ramadan">Ramadan 2027</button></div>
+<label>Travellers</label><div class="seg"><span style="font-size:13px;align-self:center">Adults</span> <input type="number" id="ad" min="1" value="2"> <span style="font-size:13px;align-self:center">Children (2 to 11)</span> <input type="number" id="ch" min="0" value="0"></div>
+</div>
+<div class="card">
+<h3>Your estimate</h3>
+<div class="total" id="tot">PKR 0</div>
+<div class="pp" id="pp"></div>
+<div class="line"><span>Per adult</span><b id="pa"></b></div>
+<div class="line"><span>Per child (25% less, no bed)</span><b id="pc"></b></div>
+<div class="line"><span>Includes</span><span style="text-align:right">Visa, return flight, hotel, transport, Ziyarat, 24/7 guide</span></div>
+<div class="hotel" id="hot"></div>
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener">Send this estimate to WhatsApp</a>
+<a class="q" href="contact.html">Request a written quote</a>
+<p class="note">Indicative 2026-27 rates per person. Ramadan rates depend on the ten nights chosen. Infants under 2 travel on a lap fare quoted separately.</p>
+</div>
+</div>
+<script>
+(function(){
+var base={eco:{7:285000,10:296000,14:330000,21:470000},std:{7:330000,10:360000,14:410000,21:490000},prm:{7:420000,10:475000,14:540000,21:680000}};
+var roomAdd={quad:0,triple:0.1,double:0.22};
+var hotels={eco:{mk:'Al Kiswah Towers (or similar)',mkd:900,md:'Al Eiman Royal (or similar)',mdd:400},std:{mk:'Makkah Towers / Elaf Ajyad',mkd:350,md:'Dar Al Taqwa',mdd:150},prm:{mk:'Swissotel / Hilton Suites (Haram view)',mkd:50,md:'Anwar Al Madinah Movenpick',mdd:100}};
+var s={days:'10',tier:'std',room:'quad',season:'normal'};
+function f(n){return 'PKR '+Math.round(n).toLocaleString('en-PK');}
+function walk(m){return Math.max(1,Math.round(m/80))+' min walk';}
+function calc(){
+ var ad=+document.getElementById('ad').value||1, ch=+document.getElementById('ch').value||0;
+ var pa=base[s.tier][s.days]*(1+roomAdd[s.room]); if(s.season==='ramadan') pa*=1.5;
+ var pc=pa*0.75, tot=pa*ad+pc*ch;
+ document.getElementById('tot').textContent=f(tot);
+ document.getElementById('pp').textContent=ad+' adult'+(ad>1?'s':'')+(ch?' and '+ch+' child'+(ch>1?'ren':''):'')+', '+s.days+' days, '+{eco:'Economy',std:'Standard',prm:'Premium'}[s.tier]+', '+s.room+' sharing';
+ document.getElementById('pa').textContent=f(pa); document.getElementById('pc').textContent=f(pc);
+ var h=hotels[s.tier];
+ document.getElementById('hot').innerHTML='<b>Makkah:</b> '+h.mk+' &middot; '+h.mkd+' m from the Haram ('+walk(h.mkd)+')<div class="bar"><i style="width:'+Math.max(6,100-h.mkd/10)+'%"></i></div><b>Madinah:</b> '+h.md+' &middot; '+h.mdd+' m from Masjid an-Nabawi ('+walk(h.mdd)+')<div class="bar"><i style="width:'+Math.max(6,100-h.mdd/10)+'%"></i></div>';
+ var msg='Assalam o Alaikum, I built an Umrah estimate on your website: '+s.days+' days, '+{eco:'Economy',std:'Standard 4-star',prm:'Premium 5-star'}[s.tier]+', '+s.room+' sharing, '+(s.season==='ramadan'?'Ramadan 2027':'Nov 2026 to Feb 2027')+', '+ad+' adults'+(ch?' and '+ch+' children':'')+'. Estimate '+f(tot)+'. Please send me a written quote.';
+ document.getElementById('wa').href='https://wa.me/923001853111?text='+encodeURIComponent(msg);
+}
+document.querySelectorAll('#amt-b .seg[data-k] button').forEach(function(b){b.onclick=function(){var k=b.parentNode.dataset.k;b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');s[k]=b.dataset.v;calc();};});
+document.getElementById('ad').oninput=calc;document.getElementById('ch').oninput=calc;calc();
+})();
+</script>
+</div>
+
+<div id="amt-pk" class="wg">
+<style>
+#amt-pk{font-family:Arial,Helvetica,sans-serif;color:#1b2f5e;max-width:1000px;margin:0 auto 18px}
+#amt-pk .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+#amt-pk .filters button{border:1px solid #c9d0dc;background:#fff;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:13px;color:#1b2f5e}
+#amt-pk .filters button.on{background:#1b2f5e;color:#fff;border-color:#1b2f5e}
+#amt-pk .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+#amt-pk .card{border:1px solid #e3e7ef;border-radius:14px;padding:16px;background:#fff;box-shadow:0 3px 14px rgba(27,47,94,.07);position:relative}
+#amt-pk .tier{position:absolute;top:14px;right:14px;font-size:11px;font-weight:bold;padding:3px 9px;border-radius:12px;background:#fff3e8;color:#f26b1d}
+#amt-pk .tier.p{background:#fff8dc;color:#8a6d00}#amt-pk .tier.e{background:#e8f6ec;color:#1e6b36}#amt-pk .tier.h{background:#eef1f6;color:#1b2f5e}
+#amt-pk h4{margin:0 0 4px;font-size:17px;padding-right:80px}
+#amt-pk .d{font-size:13px;color:#5b6577;margin-bottom:8px}
+#amt-pk .h{font-size:13px;line-height:1.5}
+#amt-pk .price{margin:10px 0 4px;font-size:22px;font-weight:bold;color:#f26b1d}
+#amt-pk .price small{font-size:12px;color:#5b6577;font-weight:normal}
+#amt-pk .occ{font-size:12px;color:#5b6577;margin-bottom:10px}
+#amt-pk .inc{font-size:12px;color:#334;margin-bottom:12px}
+#amt-pk a.b{display:inline-block;background:#1b2f5e;color:#fff;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:bold}
+#amt-pk a.w{background:#25d366;margin-left:6px}
+#amt-pk .note{font-size:12px;color:#7a8498;margin-top:14px}
+</style>
+<div class="filters"><button class="on" data-f="all">All</button><button data-f="Economy">Economy</button><button data-f="Standard">Standard</button><button data-f="Premium">Premium</button><button data-f="Hajj">Hajj</button></div>
+<div class="grid" id="amt-grid"></div>
+<p class="note">Prices are per person in PKR, indicative for the 2026-27 season, and depend on departure date and room sharing. Final written quote on WhatsApp within 24 hours.</p>
+<script>
+(function(){
+var P=[
+{n:"Economy Umrah 7 Days",t:"Economy",d:7,mk:"Al Kiswah Towers (or similar), 900 m",md:"Al Eiman Royal (or similar), 400 m",q:285000,tr:315000,db:345000,inc:"Visa, return flight, hotel, transport, Ziyarat, 24/7 guide",s:"Nov 2026 to Feb 2027"},
+{n:"Economy Umrah 10 Days",t:"Economy",d:10,mk:"Al Kiswah Towers (or similar), 900 m",md:"Al Eiman Royal (or similar), 400 m",q:296000,tr:330000,db:365000,inc:"Visa, return flight, hotel, transport, Ziyarat, 24/7 guide",s:"Nov 2026 to Feb 2027"},
+{n:"Standard Umrah 10 Days",t:"Standard",d:10,mk:"Makkah Towers / Elaf Ajyad, 350 m",md:"Dar Al Taqwa (or similar), 150 m",q:360000,tr:395000,db:440000,inc:"Visa, flight, 4-star hotel, private transport, Ziyarat, breakfast",s:"Nov 2026 to Feb 2027"},
+{n:"Standard Umrah 14 Days",t:"Standard",d:14,mk:"Makkah Towers / Elaf Ajyad, 350 m",md:"Dar Al Taqwa (or similar), 150 m",q:410000,tr:450000,db:500000,inc:"Visa, flight, 4-star hotel, private transport, Ziyarat, breakfast",s:"Nov 2026 to Feb 2027"},
+{n:"Premium Umrah 10 Days",t:"Premium",d:10,mk:"Swissotel / Hilton Suites, Haram view",md:"Anwar Al Madinah Movenpick, 100 m",q:475000,tr:520000,db:580000,inc:"Visa, flight, 5-star hotels, private transport, Ziyarat, breakfast",s:"Nov 2026 to Feb 2027"},
+{n:"Star Umrah Group 21 Days",t:"Standard",d:21,mk:"Makkah Towers (or similar), 350 m",md:"Dar Al Taqwa (or similar), 150 m",q:470000,tr:510000,db:560000,inc:"Visa, flight, hotel, group transport, Ziyarat, group leader",s:"October 2026 group departure"},
+{n:"Ramadan Umrah 15 Days",t:"Standard",d:15,mk:"Makkah Towers (or similar), 350 m",md:"Dar Al Taqwa (or similar), 150 m",q:550000,tr:600000,db:660000,inc:"Visa, flight, hotel, transport, Ziyarat, Iftar arrangements",s:"Ramadan 2027, first 20 nights"},
+{n:"Hajj 2027",t:"Hajj",d:30,mk:"Azizia building + Mina camp",md:"Near Masjid an-Nabawi",q:0,inc:"Hajj visa, flights, Makkah, Madinah and Mina stay, meals, scholar guidance, training",s:"Dhul Hijjah 1448, pricing after Hajj Policy 2027"}];
+var g=document.getElementById('amt-grid');
+function f(n){return n.toLocaleString('en-PK');}
+function render(k){g.innerHTML=P.filter(function(p){return k==='all'||p.t===k;}).map(function(p){
+ var wa='https://wa.me/923001853111?text='+encodeURIComponent('Assalam o Alaikum, I want a quote for '+p.n);
+ return '<div class="card"><span class="tier '+p.t[0].toLowerCase()+'">'+p.t+'</span><h4>'+p.n+'</h4><div class="d">'+p.d+' days &middot; '+p.s+'</div>'+
+ '<div class="h"><b>Makkah:</b> '+p.mk+'<br><b>Madinah:</b> '+p.md+'</div>'+
+ (p.q?'<div class="price">PKR '+f(p.q)+' <small>per person, quad</small></div><div class="occ">Triple PKR '+f(p.tr)+' &middot; Double PKR '+f(p.db)+'</div>':'<div class="price">Registration open</div><div class="occ">Price announced with Hajj Policy 2027</div>')+
+ '<div class="inc">Includes: '+p.inc+'</div><a class="b" href="contact.html">Get quote</a><a class="b w" href="'+wa+'" target="_blank" rel="noopener">WhatsApp</a></div>';}).join('');}
+render('all');
+document.querySelectorAll('#amt-pk .filters button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#amt-pk .filters button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');render(b.dataset.f);};});
+})();
+</script>
+</div>
+
+<section class="txt">
+<h2>What every package includes</h2>
+<p>Umrah visa, return airfare from Lahore (Karachi and Islamabad on request), hotel accommodation, airport and Makkah to Madinah transport, Ziyarat tours and a 24/7 support line. Prices are per person in PKR and depend on room sharing. Meals are included where stated.</p>
+<h2>Economy vs Standard vs Premium</h2>
+<ul><li>Economy: hotels 600 to 1,000 m from the Haram with shuttle, shared bus transport, group leader, Ziyarat by bus.</li><li>Standard: 3 to 4 star hotels within 200 to 550 m, private or small-group transport, breakfast, group leader, Ziyarat.</li><li>Premium: 5-star Haram-view hotels, private car transfers, breakfast, personal coordinator, priority Rawdah booking.</li></ul>
+<h2>How to book in four steps</h2>
+<ol><li>Send passport copies on WhatsApp or through the inquiry form.</li><li>Receive a written quote within 24 hours.</li><li>Pay the advance to confirm seats and hotel.</li><li>Collect visa, tickets and the pre-departure briefing before you fly.</li></ol>
+<h2>Payment and cancellation</h2>
+<p>Advance 30% to confirm, balance 15 days before departure. Payments by bank transfer or at the Lahore office, receipt issued for every payment. Cancellation charges follow airline and hotel policies; visa fees are non-refundable once issued. See <a href="terms.html">Payments and Terms</a> for details.</p>
+</section>
+</main>
+<div id="ft"></div>
+<script src="../site.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travel Requirements | Al Multazam Travels</title>
+<meta name="description" content="Al Multazam Travels, Lahore: government-approved Hajj and Umrah operator since 1981.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="top"></div>
+<main>
+<h1 class="pt">Travel Requirements</h1>
+<div class="bn" data-m="sweep" data-img="3" data-k="Before you travel" data-h="Get your documents ready early" data-p="Passport, visa, vaccinations and what to pack."></div>
+
+<div id="amt-t" class="wg">
+<style>
+#amt-t{font-family:Arial,Helvetica,sans-serif;color:#1b2f5e;max-width:980px;margin:0 auto 18px}
+#amt-t .g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:760px){#amt-t .g{grid-template-columns:1fr}}
+#amt-t .c{background:#fff;border:1px solid #e3e7ef;border-radius:14px;padding:16px;box-shadow:0 4px 18px rgba(27,47,94,.08)}
+#amt-t h4{margin:0 0 2px;font-size:16px}
+#amt-t .s{font-size:12px;color:#5b6577;margin:0 0 10px}
+#amt-t table{width:100%;font-size:13px;border-collapse:collapse}
+#amt-t td{padding:4px 0;border-bottom:1px dashed #eef1f6}
+#amt-t td:last-child{text-align:right;font-weight:bold}
+#amt-t .tabs{display:flex;gap:6px;margin-bottom:8px}
+#amt-t .tabs button{flex:1;border:1px solid #c9d0dc;background:#fff;border-radius:8px;padding:6px;cursor:pointer;font-size:12px;color:#1b2f5e}
+#amt-t .tabs button.on{background:#1b2f5e;color:#fff}
+#amt-t input{width:100%;box-sizing:border-box;padding:9px;border:1px solid #c9d0dc;border-radius:8px;font-size:15px;margin:4px 0}
+#amt-t .big{font-size:24px;font-weight:bold;color:#f26b1d;margin:6px 0}
+#amt-t .q{font-size:13px;line-height:1.6}
+</style>
+<div class="g">
+<div class="c"><h4>Prayer times today</h4><p class="s" id="pdate">Loading…</p>
+<div class="tabs"><button class="on" data-c="Makkah">Makkah</button><button data-c="Madinah">Madinah</button><button data-c="Lahore">Lahore</button></div>
+<table id="pt"></table></div>
+<div class="c"><h4>PKR ⇄ SAR converter</h4><p class="s" id="rate">Fetching today's rate…</p>
+<input type="number" id="pkr" value="100000"> <div style="font-size:12px;color:#5b6577">Pakistani rupees</div>
+<div class="big" id="sar">—</div><div style="font-size:12px;color:#5b6577">Saudi riyals</div>
+<input type="number" id="sar2" placeholder="Or enter SAR" style="margin-top:10px"><div class="big" id="pkr2" style="font-size:18px">—</div></div>
+<div class="c"><h4>Qibla and Hijri date</h4><p class="s">From your current location, if you allow it.</p>
+<div class="q" id="qib">Hijri date: <b id="hij">…</b><br>Qibla direction: <b id="qb">tap below</b></div>
+<button onclick="amtQibla()" style="margin-top:8px;border:0;background:#1b2f5e;color:#fff;border-radius:8px;padding:9px 12px;cursor:pointer;font-size:13px">Find my Qibla direction</button>
+<p class="s" style="margin-top:10px">Nusuk app issues Rawdah and Umrah permits; our team books them for every group.</p></div>
+</div>
+<script>
+(function(){
+var coords={Makkah:[21.4225,39.8262],Madinah:[24.4672,39.6111],Lahore:[31.5204,74.3587]};
+function load(city){var c=coords[city];fetch('https://api.aladhan.com/v1/timings?latitude='+c[0]+'&longitude='+c[1]+'&method=4').then(function(r){return r.json();}).then(function(j){var t=j.data.timings,order=['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'];document.getElementById('pt').innerHTML=order.map(function(k){return '<tr><td>'+k+'</td><td>'+t[k]+'</td></tr>';}).join('');document.getElementById('pdate').textContent=city+' · '+j.data.date.readable+' · '+j.data.date.hijri.day+' '+j.data.date.hijri.month.en+' '+j.data.date.hijri.year+' AH';document.getElementById('hij').textContent=j.data.date.hijri.day+' '+j.data.date.hijri.month.en+' '+j.data.date.hijri.year+' AH';}).catch(function(){document.getElementById('pdate').textContent='Prayer times unavailable right now.';});}
+document.querySelectorAll('#amt-t .tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#amt-t .tabs button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');load(b.dataset.c);};});
+load('Makkah');
+var rate=0.0132;
+fetch('https://open.er-api.com/v6/latest/PKR').then(function(r){return r.json();}).then(function(j){if(j&&j.rates&&j.rates.SAR){rate=j.rates.SAR;document.getElementById('rate').textContent='1 SAR = PKR '+(1/rate).toFixed(2)+' (market rate, '+new Date(j.time_last_update_utc).toDateString()+')';}conv();}).catch(function(){document.getElementById('rate').textContent='Approximate rate: 1 SAR ≈ PKR '+(1/rate).toFixed(0);conv();});
+function conv(){var p=+document.getElementById('pkr').value||0;document.getElementById('sar').textContent='SAR '+(p*rate).toLocaleString('en-PK',{maximumFractionDigits:0});var s=+document.getElementById('sar2').value||0;document.getElementById('pkr2').textContent=s?'PKR '+(s/rate).toLocaleString('en-PK',{maximumFractionDigits:0}):'—';}
+document.getElementById('pkr').oninput=conv;document.getElementById('sar2').oninput=conv;
+window.amtQibla=function(){var out=document.getElementById('qb');if(!navigator.geolocation){out.textContent='not supported';return;}out.textContent='locating…';navigator.geolocation.getCurrentPosition(function(p){fetch('https://api.aladhan.com/v1/qibla/'+p.coords.latitude+'/'+p.coords.longitude).then(function(r){return r.json();}).then(function(j){out.textContent=Math.round(j.data.direction)+'° from North (clockwise)';}).catch(function(){out.textContent='unavailable';});},function(){out.textContent='location permission needed';});};
+})();
+</script>
+</div>
+
+<section class="txt">
+<p>What Pakistani pilgrims need before travelling to Saudi Arabia for Umrah or Hajj. Rules change; we confirm the current requirements at the time of your booking.</p>
+<h2>Umrah visa for Pakistani citizens</h2>
+<ul><li>Issued through a Ministry-approved operator such as Al Multazam; pilgrims cannot apply directly on Nusuk.</li><li>Passport valid for at least six months; clear scanned copy and a white-background photo.</li><li>Visa fee about SAR 300 plus mandatory insurance; usually valid for entry within 30 days and a stay of up to 90 days.</li><li>Processing 3 to 5 working days once documents are complete.</li></ul>
+<h2>Health requirements</h2>
+<ul><li>Meningococcal ACYW vaccine at least 10 days before travel; certificate valid for 3 to 5 years depending on the vaccine.</li><li>Polio vaccination certificate (bOPV or IPV) for all travellers from Pakistan.</li><li>Carry your digital vaccination record; airport staff may ask for it at check-in.</li><li>Bring regular medicines with the prescription; pharmacies in Makkah and Madinah stock most common medicines.</li></ul>
+<h2>Nusuk app and permits</h2>
+<ul><li>Rawdah (Riyad ul Jannah) visits and Umrah permits are issued through the Nusuk app; our team books Rawdah slots for every pilgrim in the group.</li><li>Hajj pilgrims receive a Nusuk card; keep it with you at all times during the Hajj days.</li></ul>
+<h2>Money</h2>
+<ul><li>Currency: Saudi riyal (SAR). Exchange in Pakistan or at the hotel; cards work in most shops and restaurants.</li><li>Keep small notes for taxis, barbers and shopping near the Haram.</li></ul>
+<h2>Mobile and internet</h2>
+<ul><li>Saudi SIMs (STC, Mobily, Zain) are sold at Jeddah and Madinah airports; an eSIM can be bought before departure.</li><li>Every group has a WhatsApp group with the group leader for daily announcements.</li></ul>
+<h2>Weather and clothing</h2>
+<ul><li>Makkah is hot most of the year; Madinah is cooler in winter nights. Ramadan 2027 falls in February to March.</li><li>Light cotton clothing, comfortable slippers, an umbrella or cap, and one warm layer for Madinah.</li></ul>
+<h2>Customs and etiquette</h2>
+<ul><li>Respect prayer times, queue patiently at the Haram gates, and keep the Haram clean.</li><li>Photography inside the mosques is allowed only without disturbing worshippers; drones are not allowed.</li></ul>
+</section>
+</main>
+<div id="ft"></div>
+<script src="../site.js"></script>
+</body>
+</html>
