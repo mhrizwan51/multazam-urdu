@@ -138,3 +138,9 @@ header.top{background:rgba(19,36,74,.94);backdrop-filter:blur(8px)}
 html[lang=en] .trust span{font-size:12px}
 .map{width:100%;height:280px;border:0;border-radius:12px;margin-top:6px}
 .note{font-size:13px;color:#5b6577}
+.ceo{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;margin:6px 0}
+.ceo img{width:170px;border-radius:14px;border:2px solid #e3b95a}
+.ceo>div{flex:1;min-width:240px}
+figure.doc{margin:10px auto;text-align:center}
+figure.doc img{max-width:min(100%,520px);border-radius:12px;border:1px solid #e3e7ef}
+figure.doc figcaption{font-size:13px;color:#5b6577;margin-top:4px}
